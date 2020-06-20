@@ -53,9 +53,9 @@ func main() {
 		oddOrEven = odd
 	}
 
-	remainder := 0
+	remainder := 1
 	if oddOrEven == even {
-		remainder = 1
+		remainder = 0
 	}
 
 	score = make(map[string]int)

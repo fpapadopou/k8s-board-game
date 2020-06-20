@@ -65,6 +65,6 @@ func playBoard(boardUrl string) {
 
 		tts = 2 * time.Second
 		log.Printf("tried number: %s", number)
-		log.Printf("got [%s] response from board", resp.Status)
+		log.Printf("got [%s] response from board %s", resp.Status, boardUrl)
 	}
 }
