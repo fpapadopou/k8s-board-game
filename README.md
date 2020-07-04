@@ -1,5 +1,5 @@
-## Service-cluster
+## Board Game
 
-A cluster of HTTP applications semi-randomly intercating with each other.  
+A set of kubernetes HTTP [services](https://kubernetes.io/docs/concepts/services-networking/service) consisting of multiple boards and a client interacting with them.
 
-The apps are deployed on [kubernetes](https://kubernetes.io/) as [services](https://kubernetes.io/docs/concepts/services-networking/service).
+The apps are deployed on [Google Cloud Platform Kubernetes Engine](https://console.cloud.google.com/kubernetes).
