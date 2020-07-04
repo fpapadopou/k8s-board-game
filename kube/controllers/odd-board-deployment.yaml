@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: odd-board-deployment
+  labels:
+    app: odd-board
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: board
+  template:
+    metadata:
+      labels:
+        app: board
+    spec:
+      containers:
+        - name: odd-board
+          image: board:latest
+          imagePullPolicy: Never
+          env:
+            - name: odd_or_even
+              value: "odd"
+          ports:
+            - containerPort: 8080

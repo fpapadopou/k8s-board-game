@@ -1,0 +1,25 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: even-board-deployment
+  labels:
+    app: even-board
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: board
+  template:
+    metadata:
+      labels:
+        app: board
+    spec:
+      containers:
+        - name: even-board
+          image: board:latest
+          imagePullPolicy: Never
+          env:
+            - name: odd_or_even
+              value: "even"
+          ports:
+            - containerPort: 8080
