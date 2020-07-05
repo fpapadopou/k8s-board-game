@@ -18,7 +18,7 @@ local-build:
 gcloud-build: check-project-id-env
 	cd board && docker build -t gcr.io/${PROJECT_ID}/board .
 	cd ..
-	cd client && docker build -t gcr.io/${PROJECT_ID}/client ./
+	cd client && docker build -t gcr.io/${PROJECT_ID}/client .
 	cd ..
 	@echo 'Updated gcr.io app images:'
 	docker images
