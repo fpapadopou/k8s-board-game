@@ -5,7 +5,3 @@ A set of kubernetes HTTP [services](https://kubernetes.io/docs/concepts/services
 The apps are deployed on [Google Cloud Platform Kubernetes Engine](https://console.cloud.google.com/kubernetes).
 
 
-kubectl apply -f kube/controllers --dry-run=true # dry run apply all deployments
-
-kubectl apply -f kube/controllers # update all deployments config
-
