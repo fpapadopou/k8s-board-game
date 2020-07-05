@@ -9,7 +9,7 @@ spec:
   replicas: 1
   selector:
     matchLabels:
-      app: board
+      app: even-board
   template:
     metadata:
       labels:
