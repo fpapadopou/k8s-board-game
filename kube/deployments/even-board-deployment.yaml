@@ -13,7 +13,7 @@ spec:
   template:
     metadata:
       labels:
-        app: board
+        app: even-board
     spec:
       containers:
         - name: even-board
