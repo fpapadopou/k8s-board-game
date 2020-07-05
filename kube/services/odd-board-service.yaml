@@ -1,0 +1,14 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: odd-board
+spec:
+  selector:
+    # Match all pods with the 'app: odd-board' label.
+    app: odd-board
+  ports:
+    - protocol: TCP
+      # Port exposed by the service.
+      port: 80
+      # Forward traffic to the targetPort in pods.
+      targetPort: 8080
