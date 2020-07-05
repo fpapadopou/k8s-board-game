@@ -34,8 +34,12 @@ gcloud-deploy: check-project-id-env
 	cat ./kube/deployments/even-board-deployment.yaml | sed -E 's/image: board:latest/image: gcr.io\/${PROJECT_ID}\/board:latest/' | sed -E 's/imagePullPolicy: Never/imagePullPolicy: Always/' > ./kube/gcloud-resource-configs/even-board-deployment.yaml
 	cat ./kube/deployments/odd-board-deployment.yaml | sed -E 's/image: board:latest/image: gcr.io\/${PROJECT_ID}\/board:latest/' | sed -E 's/imagePullPolicy: Never/imagePullPolicy: Always/' > ./kube/gcloud-resource-configs/odd-board-deployment.yaml
 	cp ./kube/services/* ./kube/gcloud-resource-configs
-	cd kube && kubectly apply -k kustomization.yaml
-	cd ..
+	gcloud config set project ${PROJECT_ID}
+	kubectl apply -f ./kube/gcloud-resource-configs/odd-board-deployment.yaml
+	kubectl apply -f ./kube/gcloud-resource-configs/even-board-deployment.yaml
+	kubectl apply -f ./kube/gcloud-resource-configs/odd-board-service.yaml
+	kubectl apply -f ./kube/gcloud-resource-configs/even-board-service.yaml
+	kubectl apply -f ./kube/gcloud-resource-configs/client-deployment.yaml
 	@echo 'Done applying resources updates'
 
 check-project-id-env:
