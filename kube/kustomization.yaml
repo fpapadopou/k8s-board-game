@@ -1,0 +1,10 @@
+# List of Resource Configs to be applied
+resources:
+  - gcloud-resource-configs/odd-board-deployment.yaml
+  - gcloud-resource-configs/even-board-deployment.yaml
+  - gcloud-resource-configs/odd-board-service.yaml
+  - gcloud-resource-configs/even-board-service.yaml
+  - gcloud-resource-configs/client-deployment.yaml
+
+# Namespace to deploy all Resources to
+namespace: board-game

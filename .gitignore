@@ -1,1 +1,2 @@
 .idea*
+kube/gcloud-resource-configs/*.yaml
